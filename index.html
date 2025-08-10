@@ -26,14 +26,45 @@
         </div>
       </div>
       <div class="card-inner">
-        <img src="inv.jpg" alt="Invitation" class="card-image" />
+        <div class="image-container">
+          <img src="inv.jpg" alt="Invitation" class="card-image" id="cardImage" />
+          <div class="image-loading" id="imageLoading">Loading...</div>
+        </div>
       </div>
     </div>
   </div>
   <script>
     const card = document.getElementById('invitationCard');
-    // Automatically open after 600ms
-    setTimeout(() => card.classList.add('open'), 1000);
+    const cardImage = document.getElementById('cardImage');
+    const imageLoading = document.getElementById('imageLoading');
+    
+    // Handle image loading
+    cardImage.addEventListener('load', function() {
+      imageLoading.style.display = 'none';
+      cardImage.style.opacity = '1';
+    });
+    
+    cardImage.addEventListener('error', function() {
+      imageLoading.textContent = 'Image not available';
+      imageLoading.style.color = '#bfa14a';
+    });
+    
+    // Only auto-open after image is loaded and a delay
+    cardImage.addEventListener('load', function() {
+      setTimeout(() => {
+        if (!card.classList.contains('open')) {
+          card.classList.add('open');
+        }
+      }, 1500); // Increased delay to 1.5 seconds
+    });
+    
+    // If image fails to load, still auto-open after delay
+    setTimeout(() => {
+      if (!card.classList.contains('open')) {
+        card.classList.add('open');
+      }
+    }, 3000); // Fallback delay of 3 seconds
+    
     card.addEventListener('click', function() {
       this.classList.toggle('open');
     });
