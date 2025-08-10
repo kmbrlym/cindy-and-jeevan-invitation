@@ -482,6 +482,28 @@ body {
   text-shadow: 0 1px 0 #fffbe9;
 }
 
+.tap-instruction {
+  font-size: 0.9rem;
+  color: #d4af7a;
+  font-style: italic;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px #fffbe9;
+  position: relative;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(230, 201, 107, 0.1) 0%, rgba(255, 251, 233, 0.3) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(230, 201, 107, 0.3);
+  box-shadow: 0 2px 8px rgba(230, 201, 107, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tap-instruction:hover {
+  background: linear-gradient(135deg, rgba(230, 201, 107, 0.2) 0%, rgba(255, 251, 233, 0.4) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(230, 201, 107, 0.2);
+}
+
 .card-divider {
   width: 60px;
   height: 3px;
