@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EngagementInvitation Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="card-bg">
+    <div class="invitation-card" id="invitationCard">
+      <div class="card-front">
+        <div class="card-front-content">
+          <div class="card-floral-top">
+            <svg class="rings-svg" width="70" height="40" viewBox="0 0 70 40">
+              <ellipse cx="25" cy="20" rx="14" ry="14" fill="none" stroke="#e6c96b" stroke-width="4"/>
+              <ellipse cx="45" cy="20" rx="14" ry="14" fill="none" stroke="#bfa14a" stroke-width="4"/>
+              <ellipse cx="25" cy="20" rx="14" ry="14" fill="none" stroke="#fffbe9" stroke-width="1.5"/>
+              <ellipse cx="45" cy="20" rx="14" ry="14" fill="none" stroke="#fffbe9" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h1 class="card-title">You're Invited</h1>
+          <div class="card-subtitle">to an Engagement Celebration</div>
+          <div class="card-divider"></div>
+        </div>
+      </div>
+      <div class="card-inner">
+        <img src="inv.jpg" alt="Invitation" class="card-image" />
+      </div>
+    </div>
+  </div>
+  <script>
+    const card = document.getElementById('invitationCard');
+    // Automatically open after 600ms
+    setTimeout(() => card.classList.add('open'), 1000);
+    card.addEventListener('click', function() {
+      this.classList.toggle('open');
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,539 @@
+body {
+  background: #f8f5e6;
+  margin: 0;
+  padding: 0;
+}
+
+.temple-invitation-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #f8f5e6 60%, #f3e3c3 100%);
+}
+
+.temple-invitation-card {
+  width: 420px;
+  min-height: 700px;
+  background: #f8f5e6;
+  border-radius: 36px;
+  box-shadow: 0 8px 32px rgba(180, 150, 80, 0.10);
+  position: relative;
+  overflow: hidden;
+  border: 6px solid #e6c96b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gopuram-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 120px;
+  margin-top: 12px;
+}
+
+.pillars-sides {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex: 1;
+}
+
+.pillar {
+  width: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.invitation-center {
+  flex: 1;
+  background: #fffbe9;
+  border-radius: 24px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  box-shadow: 0 2px 12px rgba(180, 150, 80, 0.06);
+}
+
+.center-text-area {
+  width: 90%;
+  min-height: 200px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #a05a2c;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.base-ornaments {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+
+.ornamental-border {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Placeholder SVGs for now */
+.gopuram-top svg, .pillar svg, .base-ornaments svg {
+  opacity: 0.7;
+}
+
+.invitation-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9f3e6;
+}
+
+.invitation-svg-border {
+  position: relative;
+  width: 420px;
+  height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.border-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floral-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.floral-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.invitation-content {
+  position: relative;
+  z-index: 3;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+.welcome {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #a05a2c;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: #b93c5d;
+  margin: 0 0 18px 0;
+}
+
+.event {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #a05a2c;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.scenic-bottom {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.scenic-bottom svg {
+  width: 120px;
+  height: 80px;
+  display: block;
+}
+
+.canvas-stand-bg {
+  min-height: 100vh;
+  background: #f8f5e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas-stand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas-board {
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border: 6px solid #e6c96b;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(180, 150, 80, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.canvas-content {
+  width: 85%;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #a05a2c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.canvas-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #b93c5d;
+  margin: 0 0 18px 0;
+  font-weight: normal;
+}
+
+.canvas-stand-svg {
+  margin-top: -20px;
+  z-index: 1;
+  width: 180px;
+  height: 140px;
+}
+
+.easel-bg {
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.easel-container {
+  position: relative;
+  width: 320px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.easel-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 320px;
+  height: 500px;
+  pointer-events: none;
+}
+
+.canvas-on-easel {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  min-height: 260px;
+  background: #fff;
+  border: 2px solid #eee;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  border-radius: 4px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 0 0;
+}
+
+.canvas-floral-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -18px;
+}
+
+.canvas-floral-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -18px;
+}
+
+.canvas-welcome-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px 12px 12px;
+  text-align: center;
+}
+
+.canvas-welcome {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #222;
+  margin: 0 0 8px 0;
+}
+
+.canvas-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.canvas-names {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.canvas-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.envelope-bg {
+  min-height: 100vh;
+  background: #fff6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.envelope-container {
+  position: relative;
+  width: 360px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.envelope-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 260px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.envelope-flap {
+  transform-origin: 50% 30px;
+  transform-box: fill-box;
+  animation: open-flap 1.5s cubic-bezier(0.4,0.7,0.6,1) 0.5s forwards;
+}
+
+@keyframes open-flap {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(70deg); }
+}
+
+.envelope-invitation {
+  position: absolute;
+  top: 84px;
+  left: 44px;
+  width: 272px;
+  height: 132px;
+  z-index: 3;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.envelope-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card-bg {
+  min-height: 100vh;
+  background: #f8f5e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.invitation-card {
+  width: 320px;
+  height: 530px;
+  perspective: 1600px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(180, 150, 80, 0.18);
+}
+
+.card-front, .card-inner {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 22px;
+  box-shadow: 0 2px 12px rgba(180, 150, 80, 0.10);
+  background: #fdf6e3;
+  border: 2px solid #e6c96b;
+  transition: box-shadow 0.3s;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-front {
+  z-index: 2;
+  transform-origin: left center;
+  transition: transform 2.2s cubic-bezier(0.7,0.2,0.2,1);
+  background: #fdf6e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #e6c96b;
+  box-shadow: 0 8px 32px rgba(180, 150, 80, 0.18), 0 0 0 6px #fffbe9;
+  position: relative;
+  overflow: visible;
+}
+
+.card-front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  box-shadow: 0 0 60px 10px #ffe4b5 inset;
+  opacity: 0.5;
+}
+
+.card-front-content {
+  width: 100%;
+  text-align: center;
+  padding: 32px 24px 24px 24px;
+}
+
+.card-floral-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.7rem;
+  color: #bfa14a;
+  margin-bottom: 4px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px #fffbe9, 0 1px 0 #fffbe9;
+}
+
+.card-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #bfa14a;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 #fffbe9;
+}
+
+.card-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #e6c96b 0%, #fffbe9 100%);
+  border-radius: 2px;
+  margin: 0 auto 18px auto;
+  box-shadow: 0 1px 4px #fffbe9;
+}
+
+.card-floral {
+  width: 100%;
+  height: 120px;
+  background: url('https://www.transparenttextures.com/patterns/flowers.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.18;
+}
+
+.card-inner {
+  z-index: 1;
+  background: #fdf6e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.7,0.2,0.2,1) 1.2s;
+}
+
+.card-motif-img {
+  display: block;
+  margin: 0 auto 10px auto;
+  max-width: 90px;
+  height: auto;
+}
+
+.card-image {
+  width: 96%;
+  height: 92%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1.5px solid #e6c96b;
+  background: #fffbe9;
+}
+
+.invitation-card.open .card-front {
+  transform: rotateY(-180deg);
+  box-shadow: 0 2px 8px rgba(180, 150, 80, 0.10);
+}
+
+.invitation-card.open .card-inner {
+  z-index: 3;
+  opacity: 1;
+} 
