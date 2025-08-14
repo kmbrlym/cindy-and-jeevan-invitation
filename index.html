@@ -80,7 +80,7 @@
             backgroundSong.volume = 0.4;
             backgroundSong.play().catch(e => console.log('Background song failed:', e));
           }, 1000); // Start song 1 second after opening sound
-        }, 300); // Delay for opening animation
+        }, 100); // Delay for opening animation
       } else {
         // Stop background song immediately when closing
         backgroundSong.pause();
