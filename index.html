@@ -38,11 +38,15 @@
   <audio id="closeSound" preload="auto" muted>
     <source src="book-open.mp3" type="audio/mpeg">
   </audio>
+  <audio id="backgroundSong" preload="auto" muted loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
   
   <script>
     const card = document.getElementById('invitationCard');
     const openSound = document.getElementById('openSound');
     const closeSound = document.getElementById('closeSound');
+    const backgroundSong = document.getElementById('backgroundSong');
     
     // Enable audio on first user interaction
     let audioEnabled = false;
@@ -51,6 +55,7 @@
       if (!audioEnabled) {
         openSound.muted = false;
         closeSound.muted = false;
+        backgroundSong.muted = false;
         audioEnabled = true;
       }
     }
@@ -65,14 +70,25 @@
       if (isOpening) {
         setTimeout(() => {
           openSound.currentTime = 0;
-          openSound.volume = 0.3;
+          openSound.volume = 0.7;
           openSound.playbackRate = 1.0;
           openSound.play().catch(e => console.log('Audio play failed:', e));
+          
+          // Start background song after sound effect
+          setTimeout(() => {
+            backgroundSong.currentTime = 0;
+            backgroundSong.volume = 0.4;
+            backgroundSong.play().catch(e => console.log('Background song failed:', e));
+          }, 1000); // Start song 1 second after opening sound
         }, 300); // Delay for opening animation
       } else {
+        // Stop background song immediately when closing
+        backgroundSong.pause();
+        backgroundSong.currentTime = 0;
+        
         setTimeout(() => {
           closeSound.currentTime = 0;
-          closeSound.volume = 0.3;
+          closeSound.volume = 0.7;
           closeSound.playbackRate = 1; // Even faster playback for closing
           closeSound.play().catch(e => console.log('Audio play failed:', e));
         }, 900); // Delay for closing animation
