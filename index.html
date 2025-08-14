@@ -30,11 +30,58 @@
       </div>
     </div>
   </div>
+  
+  <!-- Audio elements for sound effects -->
+  <audio id="openSound" preload="auto" muted>
+    <source src="book-open.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="closeSound" preload="auto" muted>
+    <source src="book-open.mp3" type="audio/mpeg">
+  </audio>
+  
   <script>
     const card = document.getElementById('invitationCard');
+    const openSound = document.getElementById('openSound');
+    const closeSound = document.getElementById('closeSound');
+    
+    // Enable audio on first user interaction
+    let audioEnabled = false;
+    
+    function enableAudio() {
+      if (!audioEnabled) {
+        openSound.muted = false;
+        closeSound.muted = false;
+        audioEnabled = true;
+      }
+    }
+    
     card.addEventListener('click', function() {
+      enableAudio(); // Enable audio on first click
+      
+      const isOpening = !this.classList.contains('open');
       this.classList.toggle('open');
+      
+      // Play appropriate sound effect with delay to align with animation
+      if (isOpening) {
+        setTimeout(() => {
+          openSound.currentTime = 0;
+          openSound.volume = 0.3;
+          openSound.playbackRate = 1.0;
+          openSound.play().catch(e => console.log('Audio play failed:', e));
+        }, 300); // Delay for opening animation
+      } else {
+        setTimeout(() => {
+          closeSound.currentTime = 0;
+          closeSound.volume = 0.3;
+          closeSound.playbackRate = 1; // Even faster playback for closing
+          closeSound.play().catch(e => console.log('Audio play failed:', e));
+        }, 900); // Delay for closing animation
+      }
     });
+    
+    // Also enable audio on any touch/click anywhere on the page
+    document.addEventListener('click', enableAudio, { once: true });
+    document.addEventListener('touchstart', enableAudio, { once: true });
   </script>
 </body>
 </html> 
